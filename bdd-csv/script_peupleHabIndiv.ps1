@@ -27,18 +27,19 @@ $tabVilles = @('Paris', 'Marseille','Lyon','Toulouse','Nice',
 $txt = "nom" + $sep + "adresse" + $sep + "surface" + $sep + "nbPieces" + $sep + "piscine"
 
 # création du fichier CSV avec écrasement de l'ancien
-echo $txt > $fSortie 
+New-Item -Name $fSortie -ItemType "file" -Force
+Add-Content -Path $fSortie -Value $txt
 
 for ($i = 0; $i -lt $users; $i++) {
-    $rnd = Get-Random -Maximum 10 # [0..9]
-    $txt = "nom" + $i + $sep + 
-            $tabCP[$rnd] + " " + $tabVilles[$rnd] + $sep +
-            (Get-Random -Minimum 50 -Maximum 501) + $sep + # surface entre 50 et 500 m²
-            (Get-Random -Minimum 1 -Maximum 11) + $sep # entre 1 et 10 pièces
-    $piscine = 0        
-    if ((Get-Random -Maximum 11) -eq 0) {$piscine = 1} # 1 chance sur 10 d'avoir une piscine
-    $txt += $piscine 
-
-# affichage du résultat
-echo $txt >> $fSortie
+        $rnd = Get-Random -Maximum 10 # [0..9]
+        $txt = "nom" + $i + $sep + 
+                $tabCP[$rnd] + " " + $tabVilles[$rnd] + $sep +
+                (Get-Random -Minimum 50 -Maximum 501) + $sep + # surface entre 50 et 500 m²
+                (Get-Random -Minimum 1 -Maximum 11) + $sep # entre 1 et 10 pièces
+                $piscine = 0        
+                if ((Get-Random -Maximum 11) -eq 0) {$piscine = 1} # 1 chance sur 10 d'avoir une piscine
+                $txt += $piscine 
+        
+        # écriture de la ligne
+        Add-Content -Path $fSortie -Value $txt
 }

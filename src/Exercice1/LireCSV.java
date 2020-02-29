@@ -16,7 +16,7 @@ public class LireCSV {
                 String line = sc.nextLine();
                 String[] details = line.split(";");
                 // nomProrietaire - adresse - surface - nb de pieces - piscine
-                HabitationIndividuelle h = new HabitationIndividuelle(details[1], details[2], Double.parseDouble(details[3]), Integer.parseInt(details[4]), Boolean.parseBoolean(details[5]));
+                HabitationIndividuelle h = new HabitationIndividuelle(details[0], details[1], Double.parseDouble(details[2]), Integer.parseInt(details[3]), Boolean.parseBoolean(details[4]));
                 impotCommune += h.getImpot();
             }
             sc.close();
@@ -33,7 +33,7 @@ public class LireCSV {
                 String line = sc.nextLine();
                 String[] details = line.split(";");
                 // nomProrietaire - adresse - surface - nb d'employés
-                HabitationProfessionnelle h = new HabitationProfessionnelle(details[1], details[2], Double.parseDouble(details[3]), Integer.parseInt(details[4]));
+                HabitationProfessionnelle h = new HabitationProfessionnelle(details[0], details[1], Double.parseDouble(details[2]), Integer.parseInt(details[3]));
                 impotCommune += h.getImpot();
             }
             sc.close();
