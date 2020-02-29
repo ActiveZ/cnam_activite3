@@ -15,9 +15,8 @@ public class LireCSV {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] details = line.split(";");
+                // nomProrietaire - adresse - surface - nb de pieces - piscine
                 HabitationIndividuelle h = new HabitationIndividuelle(details[1], details[2], Double.parseDouble(details[3]), Integer.parseInt(details[4]), Boolean.parseBoolean(details[5]));
-
-                //System.out.println(line);
                 impotCommune += h.getImpot();
             }
             sc.close();
@@ -33,6 +32,7 @@ public class LireCSV {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] details = line.split(";");
+                // nomProrietaire - adresse - surface - nb d'employés
                 HabitationProfessionnelle h = new HabitationProfessionnelle(details[1], details[2], Double.parseDouble(details[3]), Integer.parseInt(details[4]));
                 impotCommune += h.getImpot();
             }
@@ -41,6 +41,6 @@ public class LireCSV {
             System.out.println("ERREUR lecture CSV");
             e.printStackTrace();
         }
-
+        // affichage du résultat
         System.out.println("\nLa commune va percevoir " + String.format("%.2f", impotCommune) + " € d'impôts.");    }
 }
