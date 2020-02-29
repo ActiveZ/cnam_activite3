@@ -42,5 +42,5 @@ public class LireCSV {
             e.printStackTrace();
         }
 
-        System.out.println("\nLa commune va percevoir " + impotCommune + " € d'impôts.");    }
+        System.out.println("\nLa commune va percevoir " + String.format("%.2f", impotCommune) + " € d'impôts.");    }
 }
