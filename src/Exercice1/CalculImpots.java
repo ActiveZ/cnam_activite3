@@ -5,15 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CalculImpots {
-    //private String fichierHabIndiv = "";
-    //private String fichierHabPro = "";
     private final String separateur = ";"; // séparateur des données du fichier CSV
-    //private double impotCommune = 0; //montant de l'impot collecté par la commune
 
-
-//    public double getImpotCommune() {
-//        return impotCommune;
-//    }
 
     // traitement des habitations indivduelles
     public double impotHabIndiv (String fichierHabIndiv) {
@@ -23,6 +16,8 @@ public class CalculImpots {
             File f = new File(fichierHabIndiv);
             Scanner sc = new Scanner(f);
             sc.nextLine(); // on saute la 1 ere ligne = nom colonnes
+
+            // lecture de chaque ligne du fichier
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] details = line.split(separateur);
@@ -48,6 +43,8 @@ public class CalculImpots {
             File f = new File(fichierHabPro);
             Scanner sc = new Scanner(f);
             sc.nextLine(); // on saute la 1 ere ligne = nom colonnes
+
+            // lecture de chaque ligne du fichier
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] details = line.split(separateur);

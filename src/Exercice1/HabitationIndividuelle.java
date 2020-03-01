@@ -9,7 +9,7 @@ public class HabitationIndividuelle extends Habitation {
         super(nomPropietaire, adresseLocal, surfaceHabitation);
         this.nbPiece = nbPiece;
         this.piscine = piscine;
-        this.impot = calcImpot();
+        this.impot = calcImpot(); // calcul de l'impôt dès la construction de l'habitation
     }
 
     public double getImpot() {

@@ -7,7 +7,7 @@ public class HabitationProfessionnelle extends Habitation {
     public HabitationProfessionnelle(String nomPropietaire, String adresseLocal, double surfaceHabitation, int nbEmployes) {
         super(nomPropietaire, adresseLocal, surfaceHabitation);
         this.nbEmployes = nbEmployes;
-        this.impot = calcImpot();
+        this.impot = calcImpot(); // calcul de l'impôt dès la construction de l'habitation
     }
 
     public double getImpot() {

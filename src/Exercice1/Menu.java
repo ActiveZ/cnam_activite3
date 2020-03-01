@@ -3,21 +3,14 @@ package Exercice1;
 import java.util.Scanner;
 
 public class Menu {
-    private String fichierHabIndiv = ""; // "bdd-csv/habitationsIndiv.csv"; // fichier CSV des habitations individuelles (defaut)
-    private String fichierHabPro =""; //"bdd-csv/habitationsPro.csv"; // fichier CSV des habitations professionnelles (defaut)
-    private String chemin ="";
+    private String fichierHabIndiv = ""; // fichier CSV des habitations individuelles
+    private String fichierHabPro ="";// fichier CSV des habitations professionnelles
     private Scanner sc = new Scanner(System.in);
     private CalculImpots impots = new CalculImpots();
 
-    public String getFichierHabIndiv() {
-        return fichierHabIndiv;
-    }
-
-    public String getFichierHabPro() {
-        return fichierHabPro;
-    }
-
+    // Acquisition du fichier CSV des habitations individuelles
     private void pathHabIndiv() {
+        String chemin ="";
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
         sc.nextLine();
         chemin = sc.nextLine ();
@@ -26,7 +19,9 @@ public class Menu {
         else {fichierHabIndiv = "bdd-csv/habitationsIndiv.csv";} // fichier CSV des habitations individuelles par defaut
     }
 
+    // Acquisition du fichier CSV des locaux professionnels
    private void pathHabPro() {
+        String chemin ="";
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
         sc.nextLine();
         chemin = sc.nextLine();
