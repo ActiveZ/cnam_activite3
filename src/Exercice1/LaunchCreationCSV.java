@@ -14,8 +14,8 @@ public class LaunchCreationCSV {
         do {
             int choix = 30;
             do {
-                System.out.println("1: Création du fichier habitation individuelle habitationIndiv.csv");
-                System.out.println("2: Création du fichier habitation professionnelle habitationPro.csv");
+                System.out.println("1: Création du fichier habitation individuelle habitationsIndiv.csv");
+                System.out.println("2: Création du fichier habitation professionnelle habitationsPro.csv");
                 System.out.println("3: Quitter");
 
                 choix = sc.nextInt();
@@ -42,7 +42,7 @@ public class LaunchCreationCSV {
         final String[] TAB_VILLES = {"Paris", "Marseille","Lyon","Toulouse","Nice",
                 "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille"};
 
-        String fichierCSV  = "habitationIndiv.csv";
+        String fichierCSV  = "habitationsIndiv.csv";
         String separateur = ";";
         Scanner sc = new Scanner(System.in);
         Random rd = new Random();
@@ -70,7 +70,7 @@ public class LaunchCreationCSV {
             for (int i = 0; i < nbLigne; i++) {
                 txt = "nom" + i + separateur; // nom du propriétaire
                 int rnd = rd.nextInt (TAB_CP.length); // CP + ville
-                txt += TAB_CP[rnd] + separateur + TAB_VILLES[rnd] + separateur +
+                txt += TAB_CP[rnd] + " " + TAB_VILLES[rnd] + separateur +
                     (rd.nextInt(451) + 50) + separateur + // surface entre 50 et 500 m²
                     (rd.nextInt(10) + 1) + separateur + // entre 1 et 10 pièces
                     (rd.nextInt(10) == 0 ? 1 : 0) + "\n"; // 1 chance sur 10 d'avoir une piscine

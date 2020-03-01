@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Menu {
     private String fichierHabIndiv = ""; // fichier CSV des habitations individuelles
-    private  final String FICHIER_HAB_INDIV_DEFAUT = "bdd-csv/habitationsIndiv.old.csv";
+    private  final String FICHIER_HAB_INDIV_DEFAUT = "bdd-csv/habitationsIndiv.csv";
     private String fichierHabPro = "";// fichier CSV des habitations professionnelles
-    private final String FICHIER_HAB_PRO_DEFAUT = "bdd-csv/habitationsPro.old.csv";
+    private final String FICHIER_HAB_PRO_DEFAUT = "bdd-csv/habitationsPro.csv";
     private Scanner sc = new Scanner(System.in);
     private CalculImpots impots = new CalculImpots();
 
