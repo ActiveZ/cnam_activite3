@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class Menu {
     private String fichierHabIndiv = ""; // fichier CSV des habitations individuelles
-    private String fichierHabPro ="";// fichier CSV des habitations professionnelles
+    private  final String FICHIER_HAB_INDIV_DEFAUT = "bdd-csv/habitationsIndiv.csv";
+    private String fichierHabPro = "";// fichier CSV des habitations professionnelles
+    private final String FICHIER_HAB_PRO_DEFAUT = "bdd-csv/habitationsPro.csv";
     private Scanner sc = new Scanner(System.in);
     private CalculImpots impots = new CalculImpots();
 
@@ -46,9 +48,9 @@ public class Menu {
         File f = new File(fichier);
         if (f.exists() && !f.isDirectory()) {return fichier;} //fichier valide }
         else {
-            System.out.println("FICHIER INEXISTANT ! Sélection du fichier par défaut\n");
-            return  "bdd-csv/habitationsPro.csv";} // fichier CSV des habitations professionnelles par defaut
-        }
+            System.out.println("FICHIER INEXISTANT ! Chargement du fichier par défaut\n");
+            return "";
+        }}
 
     public void menuGeneral() {
         do {
@@ -66,10 +68,12 @@ public class Menu {
                 case 1: // saisie fichier CSV habitations individuelles
                     //pathHabIndiv();
                     fichierHabIndiv = acquisitionFichier();
+                    if (fichierHabIndiv == "") {fichierHabIndiv = FICHIER_HAB_INDIV_DEFAUT;}
                     break;
                 case 2: // saisie fichier CSV locaux pro
                     //pathHabPro();
                     fichierHabPro = acquisitionFichier();
+                    if (fichierHabPro == "") {fichierHabPro = FICHIER_HAB_PRO_DEFAUT;}
                     break;
                 case 3: // calcul impôts
                     double impotCommune = 0;
