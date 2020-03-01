@@ -23,6 +23,9 @@ public class LaunchCreationCSV {
                     createHabProCSV();
                     break;
                 case 3:
+                    System.out.println("Working Directory = " +
+                            System.getProperty("user.dir"));
+
                     System.exit(0);
                 default:
                     break;
