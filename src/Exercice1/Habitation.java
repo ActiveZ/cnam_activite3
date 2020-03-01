@@ -4,7 +4,7 @@ public class Habitation {
     protected String nomProprietaire = "";
     protected  String adresseLocal = "";
     protected double surfaceHabitation = 0; // en m²
-    final double tauxImposition = 0.35; // € par m² de surface habitable
+    final double TAUX_IMPOSITION = 0.35; // € par m² de surface habitable
 
     public Habitation(String nomPropietaire, String adresseLocal, double surfaceHabitation) {
         this.nomProprietaire = nomPropietaire;
@@ -17,7 +17,7 @@ public class Habitation {
     }
 
     protected double calcImpot() {
-        return surfaceHabitation * tauxImposition;
+        return surfaceHabitation * TAUX_IMPOSITION;
     }
 
     protected void affiche() {
