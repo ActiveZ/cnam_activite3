@@ -1,5 +1,6 @@
 package Exercice1;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Menu {
@@ -8,27 +9,46 @@ public class Menu {
     private Scanner sc = new Scanner(System.in);
     private CalculImpots impots = new CalculImpots();
 
-    // Acquisition du fichier CSV des habitations individuelles
-    private void pathHabIndiv() {
-        String chemin ="";
-        System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
-        sc.nextLine();
-        chemin = sc.nextLine ();
-        System.out.println();
-        if (!chemin.isEmpty()) {fichierHabIndiv = chemin;}
-        else {fichierHabIndiv = "bdd-csv/habitationsIndiv.csv";} // fichier CSV des habitations individuelles par defaut
-    }
+//    // Teste existence du fichier
+//    private boolean fichierExiste (String monFichier) {
+//        File f = new File(monFichier);
+//        return (f.exists() && !f.isDirectory());
+//    }
 
-    // Acquisition du fichier CSV des locaux professionnels
-   private void pathHabPro() {
-        String chemin ="";
+//    // Acquisition du fichier CSV des habitations individuelles
+//    private void pathHabIndiv() {
+//        String fichier ="";
+//        System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
+//        sc.nextLine();
+//        fichier = sc.nextLine ();
+//        System.out.println();
+//        if (!fichier.isEmpty()) {fichierHabIndiv = fichier;}
+//        else {fichierHabIndiv = "bdd-csv/habitationsIndiv.csv";} // fichier CSV des habitations individuelles par defaut
+//    }
+//
+//    // Acquisition du fichier CSV des locaux professionnels
+//   private void pathHabPro() {
+//        String fichier ="";
+//        System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
+//        sc.nextLine();
+//        fichier = sc.nextLine();
+//        System.out.println();
+//        if (!fichier.isEmpty()) {fichierHabIndiv = fichier;}
+//        else {fichierHabPro = "bdd-csv/habitationsPro.csv";} // fichier CSV des habitations professionnelles par defaut
+//    }
+
+    private String acquisitionFichier() {
+        //String fichier ="";
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
         sc.nextLine();
-        chemin = sc.nextLine();
+        String fichier = sc.nextLine();
         System.out.println();
-        if (!chemin.isEmpty()) {fichierHabIndiv = chemin;}
-        else {fichierHabPro = "bdd-csv/habitationsPro.csv";} // fichier CSV des habitations professionnelles par defaut
-    }
+        File f = new File(fichier);
+        if (f.exists() && !f.isDirectory()) {return fichier;} //fichier valide }
+        else {
+            System.out.println("FICHIER INEXISTANT ! Sélection du fichier par défaut\n");
+            return  "bdd-csv/habitationsPro.csv";} // fichier CSV des habitations professionnelles par defaut
+        }
 
     public void menuGeneral() {
         do {
@@ -44,10 +64,12 @@ public class Menu {
 
             switch (choix) {
                 case 1: // saisie fichier CSV habitations individuelles
-                    pathHabIndiv();
+                    //pathHabIndiv();
+                    fichierHabIndiv = acquisitionFichier();
                     break;
                 case 2: // saisie fichier CSV locaux pro
-                    pathHabPro();
+                    //pathHabPro();
+                    fichierHabPro = acquisitionFichier();
                     break;
                 case 3: // calcul impôts
                     double impotCommune = 0;
