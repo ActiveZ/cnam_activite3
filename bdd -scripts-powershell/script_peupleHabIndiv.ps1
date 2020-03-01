@@ -1,5 +1,5 @@
 ﻿# nom du fichier de sortie
-$fSortie = "habitationsIndiv.csv"
+$fSortie = "habitationsIndiv.old.csv"
 $rep = Read-Host 'Nom du fichier de sortie ? (defaut =' $fSortie ') '
 if ($rep -ne $null) {$fSortie = $rep}
 
