@@ -11,34 +11,7 @@ public class Menu {
     private Scanner sc = new Scanner(System.in);
     private CalculImpots impots = new CalculImpots();
 
-//    // Teste existence du fichier
-//    private boolean fichierExiste (String monFichier) {
-//        File f = new File(monFichier);
-//        return (f.exists() && !f.isDirectory());
-//    }
-
-//    // Acquisition du fichier CSV des habitations individuelles
-//    private void pathHabIndiv() {
-//        String fichier ="";
-//        System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
-//        sc.nextLine();
-//        fichier = sc.nextLine ();
-//        System.out.println();
-//        if (!fichier.isEmpty()) {fichierHabIndiv = fichier;}
-//        else {fichierHabIndiv = "bdd-csv/habitationsIndiv.csv";} // fichier CSV des habitations individuelles par defaut
-//    }
-//
-//    // Acquisition du fichier CSV des locaux professionnels
-//   private void pathHabPro() {
-//        String fichier ="";
-//        System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
-//        sc.nextLine();
-//        fichier = sc.nextLine();
-//        System.out.println();
-//        if (!fichier.isEmpty()) {fichierHabIndiv = fichier;}
-//        else {fichierHabPro = "bdd-csv/habitationsPro.csv";} // fichier CSV des habitations professionnelles par defaut
-//    }
-
+    // Acquisition des fichiers CSV de l'utilisateur et vérification validité
     private String acquisitionFichier() {
         //String fichier ="";
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
@@ -66,12 +39,10 @@ public class Menu {
 
             switch (choix) {
                 case 1: // saisie fichier CSV habitations individuelles
-                    //pathHabIndiv();
                     fichierHabIndiv = acquisitionFichier();
                     if (fichierHabIndiv == "") {fichierHabIndiv = FICHIER_HAB_INDIV_DEFAUT;}
                     break;
                 case 2: // saisie fichier CSV locaux pro
-                    //pathHabPro();
                     fichierHabPro = acquisitionFichier();
                     if (fichierHabPro == "") {fichierHabPro = FICHIER_HAB_PRO_DEFAUT;}
                     break;

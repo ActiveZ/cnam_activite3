@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Launch {
     public static void main(String[] args) {
-        //double impotHabitation = 0; //impot de l'habitation (individuelle ou pro)
         double impotCommune = 0; //montant de l'impot total collecté par la commune
         ArrayList<Habitation> tabloHabitations = new ArrayList<Habitation>(); //tableau des habitations
 
