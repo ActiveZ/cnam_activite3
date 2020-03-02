@@ -15,23 +15,19 @@ public class Menu {
     // Acquisition des fichiers CSV de l'utilisateur et vérification validité
     private String acquisitionFichier() {
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
-        //----------------- a inclure
-//        // Boite de dialogue pour choisir le fichier
-//        JFileChooser dialogue = new JFileChooser(new File("."));
-//        File fichier = null;
-//        if (dialogue.showOpenDialog(null)==
-//                JFileChooser.APPROVE_OPTION) {
-//            fichier = dialogue.getSelectedFile();
-//        }
 
-        String fichier = sc.nextLine();
-        System.out.println();
-        File f = new File(fichier);
-        if (f.exists() && !f.isDirectory()) {return fichier;} //fichier valide }
-        else {
-            System.out.println("FICHIER INEXISTANT ! Chargement du fichier par défaut\n");
-            return "";
-        }}
+        // Boite de dialogue pour choisir le fichier
+        JFileChooser dialogue = new JFileChooser(new File("."));
+        File fichier = null;
+
+        if (dialogue.showOpenDialog(null)==
+                JFileChooser.APPROVE_OPTION) {
+            fichier = dialogue.getSelectedFile();
+            return fichier.getPath();
+        }
+        //else if (dialogue.showOpenDialog(null)==JFileChooser.CANCEL_OPTION) {System.out.println("Annulation" );}
+        return ""; // si annulation
+    }
 
     public void menuGeneral() {
         do {

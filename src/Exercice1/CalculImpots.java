@@ -30,6 +30,9 @@ public class CalculImpots {
         } catch (FileNotFoundException e) {
             System.out.println("ERREUR lecture CSV");
             e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ERREUR nombre de colonnes");
+            e.printStackTrace();
         }
     return impotCommune;
     }
@@ -57,7 +60,10 @@ public class CalculImpots {
         } catch (FileNotFoundException e) {
             System.out.println("ERREUR lecture CSV");
             e.printStackTrace();
-        }
+        } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("ERREUR nombre de colonnes");
+        e.printStackTrace();
+    }
     return impotCommune;
     }
 }
