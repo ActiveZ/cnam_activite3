@@ -2,8 +2,9 @@ package Exercice4;
 
 public class Pion extends Piece {
 
-    public Pion(String pNom, boolean pCouleur, boolean pVivant, Position pPosition, String pAsc) {
-        super(pNom, pCouleur, pVivant, pPosition, pAsc);
+    public Pion (String pNom, boolean pCouleur, Position pPosition) {
+        super(pNom, pCouleur, pPosition);
+        pAsc = pCouleur ? "2659" : "265F";
     }
 
     @Override
