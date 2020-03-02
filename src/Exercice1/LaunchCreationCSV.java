@@ -51,8 +51,9 @@ public class LaunchCreationCSV {
                     break;
             }
         } while (true);
-
     }
+
+    //---------------------------------------------------------------------------------------------------------
 
     // Saisie des paramètres utilisateurs: nombre de ligne du fichier CSV et séparateur de colonne à utiliser
     private  static void saisirParametres() {
@@ -69,14 +70,14 @@ public class LaunchCreationCSV {
         if (!choix.isEmpty()) {separateur = choix;}
     }
 
+
     // création du fichier habitationsIndiv.csv
     private static void createHabIndvCSV () {
         String fichierCSV  = "habitationsIndiv.csv";
         Random rd = new Random();
 
         // installation dans mon dossier perso
-        fichierCSV =  cheminPerso + fichierCSV ;
-        File f = new File(fichierCSV);
+        File f = new File(cheminPerso + fichierCSV);
 
         try {
             // création du fichierCSV , écrasement de l'ancien éventuel
@@ -94,12 +95,14 @@ public class LaunchCreationCSV {
                 // écriture de la ligne
                 fw.write(txt);
             }
-        fw.close();
+            fw.close();
+            System.out.println("Fichier " + fichierCSV + " créé !\n");
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     // Création du fichier habitationsPro.csv
     private static void createHabProCSV () {
@@ -107,8 +110,7 @@ public class LaunchCreationCSV {
         Random rd = new Random();
 
         // installation dans mon dossier perso
-        fichierCSV =  cheminPerso + fichierCSV ;
-        File f = new File(fichierCSV);
+        File f = new File(cheminPerso + fichierCSV);
 
         try {
             // création du fichierCSV , écrasement de l'ancien éventuel
@@ -126,6 +128,7 @@ public class LaunchCreationCSV {
                 fw.write(txt);
             }
             fw.close();
+            System.out.println("Fichier " + fichierCSV + " créé !\n");
 
         } catch (IOException e) {
             e.printStackTrace();

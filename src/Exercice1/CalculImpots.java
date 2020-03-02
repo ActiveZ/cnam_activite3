@@ -11,9 +11,9 @@ public class CalculImpots {
     // traitement des habitations indivduelles
     public double impotHabIndiv (String fichierHabIndiv) {
         double impotCommune = 0; //montant de l'impot collecté par la commune
-        if (fichierHabIndiv.isEmpty()) {return 0;}
+        File f = new File(fichierHabIndiv);
+        if (!f.exists() | f.isDirectory()) {return 0;} //fichier invalide }
         try {
-            File f = new File(fichierHabIndiv);
             Scanner sc = new Scanner(f);
             sc.nextLine(); // on saute la 1 ere ligne = nom colonnes
 
@@ -38,9 +38,9 @@ public class CalculImpots {
     // traitement des locaux professionnels
     public double impotHabPro (String fichierHabPro) {
         double impotCommune = 0; //montant de l'impot collecté par la commune
-        if (fichierHabPro.isEmpty()) {return 0;}
+        File f = new File(fichierHabPro);
+        if (!f.exists() | f.isDirectory()) {return 0;} //fichier invalide }
         try {
-            File f = new File(fichierHabPro);
             Scanner sc = new Scanner(f);
             sc.nextLine(); // on saute la 1 ere ligne = nom colonnes
 
