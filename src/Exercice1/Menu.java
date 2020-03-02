@@ -13,9 +13,7 @@ public class Menu {
 
     // Acquisition des fichiers CSV de l'utilisateur et vérification validité
     private String acquisitionFichier() {
-        //String fichier ="";
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
-        sc.nextLine();
         String fichier = sc.nextLine();
         System.out.println();
         File f = new File(fichier);
@@ -35,7 +33,7 @@ public class Menu {
             do {
                 System.out.print("Votre choix: ");
                 choix = sc.nextLine();
-            } while (!(choix == "1" | choix == "2" | choix == "3" | choix == "4"));
+            } while (!choix.equals("1") && !choix.equals("2") && !choix.equals("3") && !choix.equals("4"));
 
             switch (Integer.valueOf(choix)) {
                 case 1: // saisie fichier CSV habitations individuelles
