@@ -31,13 +31,13 @@ public class Menu {
             System.out.println("2: Charger les données d'habitation à usage professionnel");
             System.out.println("3: Calcul des impôts pour la commune");
             System.out.println("4: Quitter");
-            int choix = 0;
+            String choix = "";
             do {
                 System.out.print("Votre choix: ");
-                choix = sc.nextInt();
-            } while (choix < 1 | choix > 4);
+                choix = sc.nextLine();
+            } while (choix == "1" | choix == "2" | choix == "3" | choix == "4");
 
-            switch (choix) {
+            switch (Integer.valueOf(choix)) {
                 case 1: // saisie fichier CSV habitations individuelles
                     fichierHabIndiv = acquisitionFichier();
                     if (fichierHabIndiv == "") {fichierHabIndiv = FICHIER_HAB_INDIV_DEFAUT;}
