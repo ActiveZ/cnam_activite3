@@ -17,17 +17,47 @@ public class Plateau {
 
     public void creationPieces() {
         // création des pièces et positionnement sur le plateau
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) { // balayage horizontal (x)
             //pions blancs
             tabPlaleau[i][1] = new Pion("pion" + i +1, true, new Position(i , 1));
             //pions noirs
             tabPlaleau[i][6] = new Pion("pion" + i + 9, false, new Position(i , 7));
-            //tours1
-            //tabPlaleau[i][0]=
+            switch (i) {
+                case 0: //tours
+                    tabPlaleau[0][0] = new Tour("tour1",true, new Position(0,0));
+                    tabPlaleau[0][7] = new Tour("tour1",false, new Position(0,7));
+                    break;
+                case 1: //cavaliers
+                    tabPlaleau[1][0] = new Cavalier("cavalier1", true, new Position(1,0));
+                    tabPlaleau[1][7] = new Cavalier("cavalier1", false, new Position(1,7));
+                    break;
+                case 2: //fous
+                    tabPlaleau[2][0] = new Fou("fou1", true, new Position(2,0));
+                    tabPlaleau[2][7] = new Fou("fou1", false, new Position(2,7));
+                    break;
+                case 3: //reines
+                    tabPlaleau[3][0] = new Reine("reine", true, new Position(3,0));
+                    tabPlaleau[3][7] = new Reine("reine", false, new Position(3,7));
+                    break;
+                case 4: //rois
+                    tabPlaleau[4][0] = new Roi("roi", true, new Position(4,0));
+                    tabPlaleau[4][7] = new Cavalier("roi", false, new Position(4,7));
+                    break;
+                case 5: //fous
+                    tabPlaleau[5][0] = new Fou("fou2", true, new Position(5,0));
+                    tabPlaleau[5][7] = new Fou("fou2", false, new Position(5,7));
+                    break;
+                case 6: //cavaliers
+                    tabPlaleau[6][0] = new Cavalier("cavalier2", true, new Position(6,0));
+                    tabPlaleau[6][7] = new Cavalier("cavalier2", false, new Position(6,7));
+                    break;
+                case 7: //tours
+                    tabPlaleau[7][0] = new Tour("tour2",true, new Position(7,0));
+                    tabPlaleau[7][7] = new Tour("tour2",true, new Position(7,7));
+                    break;
+            }
         }
-
     }
-
 }
 
 
