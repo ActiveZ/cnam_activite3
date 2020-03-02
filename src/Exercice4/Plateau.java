@@ -38,7 +38,7 @@ public class Plateau {
                 for (int x =0; x < 8; x++) {
                     //System.out.print(tabPlaleau[x][y] + " ");
                     //System.out.print(symbolePiece[tabPlaleau[x][y]] + " ");
-                    System.out.println(tabPlaleau[x][y]);
+                    System.out.print(tabPlaleau[x][y]);
 
                     if (x == 7) { System.out.println();}
                 }

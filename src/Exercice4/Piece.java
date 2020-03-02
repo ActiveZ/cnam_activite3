@@ -9,10 +9,10 @@ public abstract class Piece {
 
 
     //constructeur
-    public Piece(String pNom, boolean pCouleur, boolean pMort, Position pPosition, String pAsc) {
+    public Piece(String pNom, boolean pCouleur, boolean pVivant, Position pPosition, String pAsc) {
         this.pNom = pNom;
         this.pCouleur = pCouleur;
-        this.pVivant = pMort;
+        this.pVivant = pVivant;
         this.pPosition = pPosition;
         this.pAsc = pAsc;
     }
