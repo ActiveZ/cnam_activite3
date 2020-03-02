@@ -27,7 +27,7 @@ public class Menu {
         String fichier = sc.nextLine();
         System.out.println();
         File f = new File(fichier);
-        if (f.exists() && !f.isDirectory()) {return f;} //fichier valide }
+        if (f.exists() && !f.isDirectory()) {return fichier;} //fichier valide }
         else {
             System.out.println("FICHIER INEXISTANT ! Chargement du fichier par défaut\n");
             return "";

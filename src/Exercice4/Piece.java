@@ -1,11 +1,22 @@
 package Exercice4;
 
 public abstract class Piece {
-    protected String[] pNom = {"", "Pion", "Cavalier", "Fou", "Tour", "Reine", "Roi"}; // nom de la pièce
-    protected int pValeur; // valeur numérique de la pièce (donne son type: aucune=0, pion=1, cavalier=2, fou=3, tour=4, reine=5, roi=6)
+    protected String pNom; // nom de la pièce
     protected boolean pCouleur; //couleur de la pièce 0->noir  1->blanc
-    protected boolean pMort; // statut de la pièce 0->en jeu    1->éliminé (mort)
-    protected String pPosition; // position xy de la pièce de "11" à "88"
+    protected boolean pVivant = true; // statut de la pièce 1->en jeu (vivant par defaut)    0->éliminé (mort)
+    protected Position pPosition; // position de la pièce
+    protected String pAsc; //code ASCII de la pièce
 
+
+    //constructeur
+    public Piece(String pNom, boolean pCouleur, boolean pMort, Position pPosition, String pAsc) {
+        this.pNom = pNom;
+        this.pCouleur = pCouleur;
+        this.pVivant = pMort;
+        this.pPosition = pPosition;
+        this.pAsc = pAsc;
+    }
+
+    // methode abstraite
     public abstract void seDeplace(); //ttt roque ?
 }
