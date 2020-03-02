@@ -28,7 +28,7 @@ public class LaunchCreationCSV {
         Scanner sc = new Scanner((System.in));
 
         do {
-            int choix = 30;
+            int choix = 0;
             do {
                 System.out.println("1: Création du fichier habitation individuelle habitationsIndiv.csv");
                 System.out.println("2: Création du fichier habitation professionnelle habitationsPro.csv");
