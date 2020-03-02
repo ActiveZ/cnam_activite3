@@ -35,7 +35,7 @@ public class Menu {
             do {
                 System.out.print("Votre choix: ");
                 choix = sc.nextLine();
-            } while (choix == "1" | choix == "2" | choix == "3" | choix == "4");
+            } while (!(choix == "1" | choix == "2" | choix == "3" | choix == "4"));
 
             switch (Integer.valueOf(choix)) {
                 case 1: // saisie fichier CSV habitations individuelles

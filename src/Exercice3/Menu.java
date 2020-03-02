@@ -9,17 +9,17 @@ public class Menu {
         double r, l, L, h;
 
         do {
-            int choix = 0;
+            String choix = "";
             do {
                 System.out.println("1: Calcul de la surface d'un cercle");
                 System.out.println("2: Calcul de la surface d'un carré");
                 System.out.println("3: Calcul de la surface d'un trapèze");
                 System.out.println("4: Quitter");
                 System.out.print("choix: ");
-                choix = sc.nextInt();
-            } while (choix < 1 | choix > 4);
+                choix = sc.nextLine();
+            } while (!(choix == "1" | choix == "2" | choix =="3" | choix == "4"));
 
-            switch (choix) {
+            switch (Integer.valueOf(choix)) {
                 case 1: // surface du cercle
                     System.out.print("\nNom du cercle: ");
                     sc.nextLine();
