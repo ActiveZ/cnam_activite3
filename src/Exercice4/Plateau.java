@@ -2,26 +2,34 @@ package Exercice4;
 
 public class Plateau {
 
-    private Piece[][] tabPlaleau = new Piece[8][8];
+    private static Piece[][] tabPlaleau = new Piece[8][8];
 
         public void affichePlateau() {
+//            Pion pTest = new Pion("test",true, new Position(1,4));
+//            System.out.println("pTest:" + pTest.pNom + pTest.pVivant);
+//            //tabPlaleau[1][4] = pTest;
+
             for (int y = 7; y >= 0; y--) {
                 for (int x =0; x < 8; x++) {
-                    System.out.print(tabPlaleau[x][y]);
+                    System.out.print(tabPlaleau[x][y].pNom);
                     if (x == 7) { System.out.println();}
                 }
             }
-            Pion pTest = new Pion("test",true, new Position(1,1));
-            System.out.println("pTest:" + pTest.pNom + pTest.pVivant);
         }
 
     public void creationPieces() {
+            Vide pVide = new Vide(null,false, null);
+
+        for (int y = 7; y >= 0; y--) {
+            for (int x =0; x < 8; x++) { tabPlaleau[x][y] = pVide; }
+            }
+
         // création des pièces et positionnement sur le plateau
         for (int i = 0; i < 8; i++) { // balayage horizontal (x)
             //pions blancs
-            tabPlaleau[i][1] = new Pion("pion" + i +1, true, new Position(i , 1));
+            tabPlaleau[i][1] = new Pion("pion" + (i + 1), true, new Position(i , 1));
             //pions noirs
-            tabPlaleau[i][6] = new Pion("pion" + i + 9, false, new Position(i , 7));
+            tabPlaleau[i][6] = new Pion("pion" + (i + 1), false, new Position(i , 7));
             switch (i) {
                 case 0: //tours
                     tabPlaleau[0][0] = new Tour("tour1",true, new Position(0,0));
