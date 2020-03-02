@@ -1,5 +1,6 @@
 package Exercice1;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.Scanner;
 
@@ -14,10 +15,19 @@ public class Menu {
     // Acquisition des fichiers CSV de l'utilisateur et vérification validité
     private String acquisitionFichier() {
         System.out.println("Chemin du fichier CSV avec séparateur ';' (vide = défaut): ");
+        //----------------- a inclure
+//        // Boite de dialogue pour choisir le fichier
+//        JFileChooser dialogue = new JFileChooser(new File("."));
+//        File fichier = null;
+//        if (dialogue.showOpenDialog(null)==
+//                JFileChooser.APPROVE_OPTION) {
+//            fichier = dialogue.getSelectedFile();
+//        }
+
         String fichier = sc.nextLine();
         System.out.println();
         File f = new File(fichier);
-        if (f.exists() && !f.isDirectory()) {return fichier;} //fichier valide }
+        if (f.exists() && !f.isDirectory()) {return f;} //fichier valide }
         else {
             System.out.println("FICHIER INEXISTANT ! Chargement du fichier par défaut\n");
             return "";
