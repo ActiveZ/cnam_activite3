@@ -4,18 +4,17 @@ public class Plateau {
 
     private static Piece[][] tabPlaleau = new Piece[8][8];
 
-        public void affichePlateau() {
-//            Pion pTest = new Pion("test",true, new Position(1,4));
-//            System.out.println("pTest:" + pTest.pNom + pTest.pVivant);
-//            //tabPlaleau[1][4] = pTest;
+    public void affichePlateau() {
 
-            for (int y = 7; y >= 0; y--) {
-                for (int x =0; x < 8; x++) {
-                    System.out.print(tabPlaleau[x][y].pNom);
-                    if (x == 7) { System.out.println();}
-                }
+        for (int y = 7; y >= 0; y--) {
+            for (int x =0; x < 8; x++) {
+                System.out.print(tabPlaleau[x][y].pNom);
+                if (x == 7) { System.out.println();}
             }
         }
+        System.out.println("pion:" + "\u2659" + "\u265f");
+    }
+
 
     public void creationPieces() {
             Vide pVide = new Vide(null,false, null);
