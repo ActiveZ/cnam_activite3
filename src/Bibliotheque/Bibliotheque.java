@@ -63,7 +63,7 @@ public class Bibliotheque {
 
     }
 
-    public boolean bibliothequeExiste() { return maxDoc != 0;}
+    public boolean bibliothequeExiste() { return maxDoc != 0;} // évite une double instanciation
 
     private int nbOuvrages() {return bibliotheque.size();}
 
