@@ -8,11 +8,11 @@ public class Menu {
 
     public void menuGeneral() {
         peupleBiblio(); // créer 10 documents pour la démo
-        System.out.println("Bibliothèque créée ! Capacité: " + bibliotheque.getMaxDoc() + " documents. Nombre de documents actuels: " + bibliotheque.getNbDocuments());
+        System.out.println("Bibliothèque créée ! Capacité: " + bibliotheque.getCapacite() + " documents. Nombre de documents actuels: " + bibliotheque.getNbDocuments());
         System.out.println("------------------------------------------------------------");
 
         do {
-            System.out.println("1: Modifier capacité bibliothèque"); // (actuellement " + bibliotheque.getNbDocuments() + ")");
+            System.out.println("1: Modifier capacité bibliothèque");
             System.out.println("2: Afficher tous les ouvrages");
             System.out.println("3: Afficher le nième document");
             System.out.println("4: Ajouter un document");
@@ -26,6 +26,15 @@ public class Menu {
             System.out.println("------------------------------------");
             switch (choix) {
                 case "1":
+                    System.out.print("Entrez la nouvelle capacité de la bibliothèque (mini:" + bibliotheque.getNbDocuments() + "): ");
+                    String capacite = sc.nextLine();
+                    // vérification par regex que capacité est bien un nombre entier positif >= nb  documents de la bibliothèque
+                    if (capacite.matches("\\d+") && (Integer.parseInt(capacite) >= bibliotheque.getNbDocuments())) {
+                        bibliotheque.setCapacite(Integer.parseInt(capacite));
+                    } else {
+                        System.out.println("ERREUR : Valeur " + capacite + " incorrecte !");
+                    }
+
                     break;
                 case "2":
                     bibliotheque.afficherTousDocuments();

@@ -2,8 +2,10 @@ package Bibliotheque;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Bibliotheque {
+    Scanner sc = new Scanner(System.in);
     private List<Document> bibliotheque = new ArrayList<Document>();
     private int capacite = 1000; //nb max de documents
 
@@ -14,7 +16,7 @@ public class Bibliotheque {
     }
     /////////////////// ACCESSEURS /////////////////////////
 
-    public int getMaxDoc() {
+    public int getCapacite() {
         return capacite;
     }
 
@@ -22,15 +24,22 @@ public class Bibliotheque {
         if  (capacite < getNbDocuments()) {
             System.out.println("ERREUR: il y a " + getNbDocuments() + " documents dans la bibliothèque");
             System.out.println("Valeur en cours inchangée: " + this.capacite);
+        } else {
+            this.capacite = capacite;
+            System.out.println("Nouvelle capacité de la bibliothèque: " + capacite + " documents.");
         }
     }
+
     //////////////////// METHODES ////////////////////////////
 
     // affiche tous les ouvrages de la bibliothèque
     public void afficherTousDocuments() {
+        System.out.println("\nAffichage des " + getNbDocuments() + " documents de la bibliothèque:");
         for (int i = 0; i < this.getNbDocuments(); i++) {
             getDocument(i);
         }
+        System.out.println("------------------------------------");
+
     }
 
     // renvoi le ième document
