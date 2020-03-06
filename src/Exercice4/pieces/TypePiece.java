@@ -1,5 +1,8 @@
 package Exercice4.pieces;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum TypePiece {
     // type de pièce, caractère si pièce blanche, caractère si pièce noire
     Fou ('\u2657','\u265D'),

@@ -1,11 +1,12 @@
 package Exercice4.pieces;
 
 public class Position {
-    private int x, y;
+    private int x, y, valeurCase;
 
-    public Position(int x, int y) {
+    public Position(int x, int y, int valeurCase) {
         this.x = x;
         this.y = y;
+        this.valeurCase = valeurCase;
     }
 
     public int getX() {
