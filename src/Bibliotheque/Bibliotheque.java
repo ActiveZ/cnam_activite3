@@ -15,6 +15,7 @@ public class Bibliotheque {
     public Bibliotheque(int capacite) {
         this.capacite = capacite;
     }
+
     /////////////////// ACCESSEURS /////////////////////////
 
     public int getCapacite() {
@@ -25,7 +26,11 @@ public class Bibliotheque {
 
     //////////////////// METHODES ////////////////////////////
 
-    // TODO: 06/03/2020
+    public String toString() {
+        return "Hello";
+    }
+
+    // TODO: 06/03/2020 redefinir tostring
     // affiche tous les ouvrages de la bibliothèque
     public void afficherTousDocuments() {
         System.out.println("\nAffichage des " + getNbDocuments() + " documents de la bibliothèque:");
@@ -35,7 +40,7 @@ public class Bibliotheque {
         System.out.println("------------------------------------");
     }
 
-    // TODO: 06/03/2020
+    // TODO: 06/03/2020 redefinir tostring
     // renvoi le ième document
     public void getDocument(int i) {
         if (i > getNbDocuments()) {
@@ -45,14 +50,15 @@ public class Bibliotheque {
         }
     }
 
-    // TODO: 06/03/2020
     // affiche la liste des auteurs
-    public void afficherAuteurs() {
+    public void afficherTousAuteurs() {
         System.out.println("Liste des auteurs:");
         for (Document doc : bibliotheque) {
-            System.out.println("Auteur:" + doc.titre);
-
+            if (doc instanceof Manuel) {
+                System.out.println("Auteur: " + ((Manuel) doc).auteur);
+            }
         }
+        System.out.println("------------------------------------");
     }
 
     // ajouter le document, renvoi true (false si échec)

@@ -36,16 +36,17 @@ public class Menu {
                         System.out.println("ERREUR : Valeur: " + capacite + " incorrecte !");
                     }
                     break;
-                case "2":
+                case "2": // Afficher tous les ouvrages
                     bibliotheque.afficherTousDocuments();
                     break;
-                case "3":
+                case "3": // Afficher le nième document
                     break;
                 case "4":
                     break;
                 case "5":
                     break;
-                case "6":
+                case "6": // Afficher les auteurs
+                    bibliotheque.afficherTousAuteurs();
                     break;
                 case "7": // fin programme
                     System.exit(0);
@@ -76,10 +77,10 @@ public class Menu {
         Revue revue2 = new Revue(268865465,"La vie du rail",12,1970);
         bibliotheque.ajouter(revue2);
 
-        Dictionnaire dico1 = new Dictionnaire(65718,"Dico1","Breton");
+        Dictionnaire dico1 = new Dictionnaire(2655681,"Dico1","Breton");
         bibliotheque.ajouter(dico1);
 
-        Dictionnaire dico2 = new Dictionnaire(65718,"Dico1","Breton");
+        Dictionnaire dico2 = new Dictionnaire(65718,"Dico2","Javanais");
         bibliotheque.ajouter(dico2);
     }
 }
