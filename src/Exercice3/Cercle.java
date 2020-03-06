@@ -14,6 +14,6 @@ public class Cercle extends Figure {
 
     @Override
     double calculSurface() {
-        return rayon * Math.PI * Math.PI;
+        return rayon * rayon * Math.PI;
     }
 }

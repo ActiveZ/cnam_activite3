@@ -12,7 +12,7 @@ public class Plateau {
                 if (x == 7) { System.out.println();}
             }
         }
-        System.out.println("pion:" + "\u2659" + "\u265f");
+        //System.out.println("pion:" + "\u2659" + "\u265f");
     }
 
 
