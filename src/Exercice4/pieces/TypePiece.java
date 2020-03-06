@@ -12,7 +12,6 @@ public enum TypePiece {
     // attributs
     private char blanc;
     private char noir;
-    //private boolean couleur;
 
     // constructeur
     private TypePiece(char b, char n) {

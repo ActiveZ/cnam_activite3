@@ -6,7 +6,6 @@ public abstract class Piece {
     protected boolean pCouleur; //couleur de la pièce 0->noir  1->blanc
     protected boolean pVivant = true; // statut de la pièce 1->en jeu (vivant par defaut)    0->éliminé (mort)
     protected Position pPosition; // position de la pièce
-    //protected String pAsc; //code ASCII de la pièce
 
 
     //constructeur
