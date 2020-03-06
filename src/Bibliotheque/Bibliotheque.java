@@ -26,10 +26,6 @@ public class Bibliotheque {
 
     //////////////////// METHODES ////////////////////////////
 
-    public String toString() {
-        return "Hello";
-    }
-
     // TODO: 06/03/2020 redefinir tostring
     // affiche tous les ouvrages de la bibliothèque
     public void afficherTousDocuments() {

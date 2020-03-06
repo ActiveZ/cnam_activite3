@@ -17,6 +17,12 @@ public class Roman extends Livre {
         this.prixLitteraire = prixLitteraire;
     }
 
+    public String getAuteur() { return super.auteur;}
+
+    public String getTitre() { return super.titre;}
+
+    public int getNbPages() { return super.nbPages;}
+
     public String getPrixLitteraire() {
         return tabPrixLitteraire [prixLitteraire];
     }

@@ -59,28 +59,28 @@ public class Menu {
 
     // remplir la bibliothèque avec 8 documents pour la démo
     private void peupleBiblio() {
-        Roman roman1 = new Roman(5654654,"Titre roman 1","Auteur Roman 1",100,0);
+        Roman roman1 = new Roman(565454,"Titre roman 1","Auteur Roman 1",100,0);
         bibliotheque.ajouter(roman1);
 
-        Roman roman2 = new Roman(82466,"Titre roman 2","Auteur Roman 2",200,1);
+        Roman roman2 = new Roman(824686,"Titre roman 2","Auteur Roman 2",200,1);
         bibliotheque.ajouter(roman2);
 
-        Manuel manuel1 = new Manuel(62545, "Manuel 1", "Emmanuel",110,1);
+        Manuel manuel1 = new Manuel(625415, "Manuel 1", "Emmanuel",110,1);
         bibliotheque.ajouter(manuel1);
 
-        Manuel manuel2 = new Manuel(54165, "Manuel 2", "Emmanuelle",110,1);
+        Manuel manuel2 = new Manuel(541665, "Manuel 2", "Emmanuelle",110,1);
         bibliotheque.ajouter(manuel2);
 
-        Revue revue1 = new Revue(5454,"Pif gadget",1,1980);
+        Revue revue1 = new Revue(547554,"Pif gadget",1,1980);
         bibliotheque.ajouter(revue1);
 
-        Revue revue2 = new Revue(268865465,"La vie du rail",12,1970);
+        Revue revue2 = new Revue(268465,"La vie du rail",12,1970);
         bibliotheque.ajouter(revue2);
 
-        Dictionnaire dico1 = new Dictionnaire(2655681,"Dico1","Breton");
+        Dictionnaire dico1 = new Dictionnaire(265581,"Dico1","Breton");
         bibliotheque.ajouter(dico1);
 
-        Dictionnaire dico2 = new Dictionnaire(65718,"Dico2","Javanais");
+        Dictionnaire dico2 = new Dictionnaire(655718,"Dico2","Javanais");
         bibliotheque.ajouter(dico2);
     }
 }

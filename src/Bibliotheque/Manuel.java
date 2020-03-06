@@ -8,11 +8,9 @@ public class Manuel extends Livre {
         this.niveauScolaire = niveauScolaire;
     }
 
-    public int getNiveauScolaire() {
-        return niveauScolaire;
-    }
+    public int getNbPages() { return super.nbPages;}
 
-    public void setNiveauScolaire(int niveauScolaire) {
-        this.niveauScolaire = niveauScolaire;
-    }
+    public int getNiveauScolaire() {return niveauScolaire; }
+
+    public void setNiveauScolaire(int niveauScolaire) { this.niveauScolaire = niveauScolaire; }
 }
