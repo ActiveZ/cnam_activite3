@@ -1,6 +1,6 @@
-package Exercice4;
+package Exercice4.pieces;
 
-public enum typePiece {
+public enum TypePiece {
     // type de pièce, caractère si pièce blanche, caractère si pièce noire
     Fou ('\u2657','\u265D'),
     Tour ('\u2656','\u265C'),
@@ -12,6 +12,7 @@ public enum typePiece {
     // attributs
     private char blanc;
     private char noir;
+    //private boolean couleur;
 
     // constructeur
     private TypePiece(char b, char n) {

@@ -1,4 +1,4 @@
-package Exercice4;
+package Exercice4.pieces;
 
 public class Position {
     private int x, y;

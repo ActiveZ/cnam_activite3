@@ -1,4 +1,4 @@
-package Exercice4;
+package Exercice4.pieces;
 
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
