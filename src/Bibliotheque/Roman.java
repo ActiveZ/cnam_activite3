@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Roman extends Livre {
     Scanner sc = new Scanner(System.in);
     private int prixLitteraire;
-    private final String[] tabPrixLitteraire = new String[]{"Aucun",
+    public static final String[] tabPrixLitteraire = new String[]{"Aucun",
                                                             "GONCOURT",
                                                             "MEDICIS",
                                                             "INTERALLIE",

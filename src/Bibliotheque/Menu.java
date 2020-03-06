@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("Bibliothèque créée ! Capacité: " + bibliotheque.getCapacite() + " documents. Nombre de documents actuels: " + bibliotheque.getNbDocuments());
         System.out.println("------------------------------------------------------------");
 
-        do {
+        do { // boucle du menu général
             System.out.println("1: Modifier capacité bibliothèque");
             System.out.println("2: Afficher tous les ouvrages");
             System.out.println("3: Afficher le nième document");
@@ -50,6 +50,70 @@ public class Menu {
                     }
                     break;
                 case "4": // Ajouter un document
+                    System.out.print("Quel type de document voulez-vous ajouter ? (1: Roman, 2: Manuel, 3: Revue, 4: Dictionnaire): ");
+                    choix = sc.nextLine();
+                    switch (choix) {
+                        case "1": //ajout roman
+                            int isbn, nbPages, prixLitteraire;
+                            String titre, auteur;
+
+                            // saisie ISBN
+                            System.out.print("Numéro ISBN du document: ");
+                            choix = sc.nextLine();
+                            if (choix.matches("\\d+")) { isbn = Integer.parseInt(choix);}
+                            else {
+                                System.out.println("ERREUR : Numéro ISBN: " + choix +  " incorrect !");
+                                System.out.println("------------------------------------");
+                                break;
+                            }
+
+                            // saisie titre
+                            System.out.print("Titre du document: ");
+                            titre = sc.nextLine();
+
+                            //saisie auteur
+                            System.out.print("Nom de l'auteur: ");
+                            auteur = sc.nextLine();
+
+                            //saisie nb pages
+                            System.out.print("Nombre de pages: ");
+                            choix = sc.nextLine();
+                            if (choix.matches("\\d+")) { nbPages = Integer.parseInt(choix);}
+                            else {
+                                System.out.println("ERREUR : Nombre de pages: " + choix +  " incorrect !");
+                                System.out.println("------------------------------------");
+                                break;
+                            }
+
+                            //saisie prix littéraire
+                            System.out.println("Prix littéraire: ");
+                            for (int i = 0; i < Roman.tabPrixLitteraire.length; i++) {
+                                System.out.println(i + ": " + Roman.tabPrixLitteraire[i]);
+                            }
+                            System.out.print("Choix: ");
+                            choix = sc.nextLine();
+                            if (choix.matches("\\d+") && Integer.parseInt(choix) < Roman.tabPrixLitteraire.length) { prixLitteraire = Integer.parseInt(choix);}
+                            else {
+                                System.out.println("ERREUR : Choix prix littéraire: " + choix + " incorrect !");
+                                System.out.println("------------------------------------");
+                                break;
+                            }
+                            // création du document et ajout à la bibliothèque
+                            Roman doc = new Roman(isbn, titre,auteur, nbPages, prixLitteraire);
+                            bibliotheque.ajouter(doc);
+                            System.out.println("Document ajouté à la bibliothèque avec succès !");
+                            System.out.println("------------------------------------");
+                            break;
+                        case "2": //ajout manuel
+                            break;
+                        case "3": //ajout revue
+                            break;
+                        case "4": //ajout dictionnaire
+                            break;
+                        default:
+                            System.out.println("ERREUR : Valeur: " + choix + " incorrecte !");
+                            break;
+                    }
                     break;
                 case "5": // Supprimer un document
                     System.out.print( "Entrez le numéro ISBN du document à supprimer: ");

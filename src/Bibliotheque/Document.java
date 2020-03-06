@@ -1,6 +1,14 @@
 package Bibliotheque;
 
 public abstract class Document {
+    public int getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
+    }
+
     protected int isbn;
     protected String titre;
 
@@ -8,6 +16,7 @@ public abstract class Document {
         this.isbn = isbn;
         this.titre = titre;
     }
+
 
     public String toString() {
         if (this instanceof Roman) {

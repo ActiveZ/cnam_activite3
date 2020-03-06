@@ -60,7 +60,7 @@ public class Bibliotheque {
     // ajouter le document, renvoi true (false si échec)
     boolean ajouter (Document doc) {return bibliotheque.add(doc);}
 
-    // supprimer le document, renvoi true (false si échec)
+    // supprimer le document par son numéro isbn, renvoi true (false si échec)
     boolean supprimer (int isbn) {
         for (Document doc : bibliotheque) {
             if (doc.isbn == isbn) { return (bibliotheque.remove(doc)); }
