@@ -27,23 +27,40 @@ public class Menu {
             switch (choix) {
                 case "1": // Modifier capacité bibliothèque"
                     System.out.print("Entrez la nouvelle capacité de la bibliothèque (mini:" + bibliotheque.getNbDocuments() + "): ");
-                    String capacite = sc.nextLine();
+                    choix = sc.nextLine();
                     // vérification par regex que capacité est bien un nombre entier positif >= nb  documents de la bibliothèque
-                    if (capacite.matches("\\d+") && (Integer.parseInt(capacite) >= bibliotheque.getNbDocuments())) {
-                        bibliotheque.setCapacite(Integer.parseInt(capacite));
+                    if (choix.matches("\\d+") && (Integer.parseInt(choix) >= bibliotheque.getNbDocuments())) {
+                        bibliotheque.setCapacite(Integer.parseInt(choix));
                         System.out.println("Nouvelle capacité de la bibliothèque: " + bibliotheque.getCapacite() + " documents.");
                     } else {
-                        System.out.println("ERREUR : Valeur: " + capacite + " incorrecte !");
+                        System.out.println("ERREUR : Valeur: " + choix + " incorrecte !");
                     }
                     break;
                 case "2": // Afficher tous les ouvrages
                     bibliotheque.afficherTousDocuments();
                     break;
                 case "3": // Afficher le nième document
+                    System.out.println("il y a " + bibliotheque.getNbDocuments() + " documents dans la bibliothèque");
+                    System.out.print( "Lequel voulez-vous afficher ? ");
+                    choix = sc.nextLine();
+                    if (choix.matches("\\d+") && (Integer.parseInt(choix) <= bibliotheque.getNbDocuments())) {
+                        bibliotheque.getDocument(Integer.parseInt(choix));
+                    } else {
+                        System.out.println("ERREUR : Valeur: " + choix + " incorrecte !");
+                    }
                     break;
-                case "4":
+                case "4": // Ajouter un document
                     break;
-                case "5":
+                case "5": // Supprimer un document
+                    System.out.print( "Entrez le numéro ISBN du document à supprimer: ");
+                    choix = sc.nextLine();
+                    if (choix.matches("\\d+")) { // vérification par regex que choix est bien un nombre entier positif
+                        if (bibliotheque.supprimer(Integer.parseInt(choix))) { System.out.println("Document supprimé !"); }
+                        else { System.out.println("ERREUR: échec de la suppression, ce numéro ISBN n'exite pas !");}
+                    } else {
+                        System.out.println("ERREUR : Valeur: " + choix + " incorrecte !");
+                    }
+                    System.out.println("------------------------------------");
                     break;
                 case "6": // Afficher les auteurs
                     bibliotheque.afficherTousAuteurs();
@@ -68,7 +85,7 @@ public class Menu {
         Manuel manuel1 = new Manuel(625415, "Manuel 1", "Emmanuel",110,1);
         bibliotheque.ajouter(manuel1);
 
-        Manuel manuel2 = new Manuel(541665, "Manuel 2", "Emmanuelle",110,1);
+        Manuel manuel2 = new Manuel(123456, "Manuel 2", "Emmanuelle",210,1);
         bibliotheque.ajouter(manuel2);
 
         Revue revue1 = new Revue(547554,"Pif gadget",1,1980);

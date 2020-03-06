@@ -61,7 +61,12 @@ public class Bibliotheque {
     boolean ajouter (Document doc) {return bibliotheque.add(doc);}
 
     // supprimer le document, renvoi true (false si échec)
-    boolean supprimer (Document doc){return bibliotheque.remove(doc);}
+    boolean supprimer (int isbn) {
+        for (Document doc : bibliotheque) {
+            if (doc.isbn == isbn) { return (bibliotheque.remove(doc)); }
+        }
+        return false;
+    }
 
     public int getNbDocuments() {return bibliotheque.size();}
 
