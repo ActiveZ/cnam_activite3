@@ -45,7 +45,6 @@ public class Menu {
                     System.out.println("il y a " + bibliotheque.getNbDocuments() + " documents dans la bibliothèque");
                     System.out.print( "Lequel voulez-vous afficher ? ");
                     int posDoc = saisirChoix();
-                    choix = sc.nextLine();
                     if (posDoc <= bibliotheque.getNbDocuments()) { bibliotheque.getDocument(posDoc); }
                     else { System.out.println("ERREUR : Valeur: " + choix + " incorrecte !"); }
                     System.out.println("------------------------------------");

@@ -28,7 +28,7 @@ public class Bibliotheque {
 
     // affiche tous les ouvrages de la bibliothèque
     public void afficherTousDocuments() {
-        System.out.println("\nAffichage des " + getNbDocuments() + " documents de la bibliothèque:");
+        System.out.println("Affichage des " + getNbDocuments() + " documents de la bibliothèque:");
         for (Document doc : bibliotheque) {
             System.out.println(doc.toString());
         }
@@ -49,7 +49,7 @@ public class Bibliotheque {
         System.out.println("Liste des auteurs:");
         for (Document doc : bibliotheque) {
             if (doc instanceof Manuel) {
-                System.out.println("Auteur: " + ((Manuel) doc).auteur);
+                System.out.println(((Manuel) doc).auteur);
             }
         }
         System.out.println("------------------------------------");
