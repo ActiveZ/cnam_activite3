@@ -8,6 +8,8 @@ public class Manuel extends Livre {
         this.niveauScolaire = niveauScolaire;
     }
 
+    public String getAuteur() { return super.auteur;}
+
     public int getNbPages() { return super.nbPages;}
 
     public int getNiveauScolaire() {return niveauScolaire; }

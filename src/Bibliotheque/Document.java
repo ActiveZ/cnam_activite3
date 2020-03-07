@@ -29,7 +29,7 @@ public abstract class Document {
         else if (this instanceof Manuel) {
             return "ISBN: " +this.isbn + " - " +
                     "Manuel: \"" + this.titre + "\" écrit par: " +
-                    ((Manuel) this).getNiveauScolaire() + " - " +
+                    ((Manuel) this).getAuteur() + " - " +
                     ((Manuel) this).getNbPages() + " pages. Niveau scolaire: " +
                     ((Manuel) this).getNiveauScolaire();
         }

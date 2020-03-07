@@ -26,7 +26,6 @@ public class Bibliotheque {
 
     //////////////////// METHODES ////////////////////////////
 
-    // TODO: 06/03/2020 redefinir tostring
     // affiche tous les ouvrages de la bibliothèque
     public void afficherTousDocuments() {
         System.out.println("\nAffichage des " + getNbDocuments() + " documents de la bibliothèque:");
@@ -36,7 +35,6 @@ public class Bibliotheque {
         System.out.println("------------------------------------");
     }
 
-    // TODO: 06/03/2020 redefinir tostring
     // renvoi le ième document
     public void getDocument(int i) {
         if (i > getNbDocuments()) {
