@@ -1,6 +1,16 @@
 package Bibliotheque;
 
 public abstract class Document {
+    protected int isbn;
+    protected String titre;
+
+    // contructeur
+    public Document(int isbn, String titre) {
+        this.isbn = isbn;
+        this.titre = titre;
+    }
+
+    // accesseurs
     public int getIsbn() {
         return isbn;
     }
@@ -9,15 +19,7 @@ public abstract class Document {
         this.isbn = isbn;
     }
 
-    protected int isbn;
-    protected String titre;
-
-    public Document(int isbn, String titre) {
-        this.isbn = isbn;
-        this.titre = titre;
-    }
-
-
+    // methodes
     public String toString() {
         if (this instanceof Roman) {
             return "ISBN: " +this.isbn + " - " +
