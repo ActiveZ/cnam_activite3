@@ -6,5 +6,8 @@ public class Launch {
         plateau.creationPieces();
         plateau.affichePlateau();
 
+        Jeu jeu = new Jeu();
+        jeu.jouer();
+
     }
 }
