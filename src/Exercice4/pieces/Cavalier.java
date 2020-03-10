@@ -1,5 +1,7 @@
 package Exercice4.pieces;
 
+import java.util.HashMap;
+
 public class Cavalier extends Piece {
     //public static final int VALEUR_CAVALIER = 3;
 
@@ -7,9 +9,12 @@ public class Cavalier extends Piece {
         super(TypePiece.Cavalier, pCouleur, pPosition);
     }
 
+//    @Override
+//    public void seDeplace() {
+//
+//    }
     @Override
-    public void seDeplace() {
-
-    }
-
+    public HashMap calculCoupsPossibles() {
+        return null;
+}
 }

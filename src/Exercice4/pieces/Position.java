@@ -35,6 +35,7 @@ public class Position {
     }
 
     public boolean isCouleurDifferente (Boolean couleur) { //vérifie si la case est occupée par une piece d'une autre couleur
+        if (Plateau.tabPlaleau[getX()][getY()] == null) {return false;} //cas du déplacement sur case vide
         return (Plateau.tabPlaleau[getX()][getY()].pCouleur != couleur); // renvoi true si couleur différente
     }
 

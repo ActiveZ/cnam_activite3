@@ -1,5 +1,7 @@
 package Exercice4.pieces;
 
+import java.util.HashMap;
+
 public class Roi extends Piece {
     public static final int VALEUR_ROI = 10;
 
@@ -7,9 +9,12 @@ public class Roi extends Piece {
         super(TypePiece.Roi, pCouleur, pPosition);
     }
 
+//    @Override
+//    public void seDeplace() {
+//
+//    }
     @Override
-    public void seDeplace() {
-
+    public HashMap calculCoupsPossibles() {
+        return null;
     }
-
 }
