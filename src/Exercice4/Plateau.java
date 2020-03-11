@@ -22,12 +22,6 @@ public class Plateau {
         System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
     }
 
-//    // retourne la piece à la position p
-//    public Piece getPiece (Position p) {
-//        //Piece piece = new Piece(tabPlaleau[p.getX()][p.getY()].getpNom(),tabPlaleau[p.getX()][p.getY()].getCouleur(), new Position (p.getX(),p.getY()));
-//
-//        return null;
-//    }
 
     // création des pièces et positionnement sur le plateau
     public void creationPieces() {
@@ -72,8 +66,6 @@ public class Plateau {
             }
         }
     }
-
-
 }
 
 

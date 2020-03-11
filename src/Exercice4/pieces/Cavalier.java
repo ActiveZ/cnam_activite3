@@ -15,6 +15,7 @@ public class Cavalier extends Piece {
 //    }
     @Override
     public HashMap calculCoupsPossibles() {
+
         return null;
 }
 }
