@@ -77,15 +77,17 @@ public class Menu {
 
                             //saisie prix littéraire
                             System.out.println("Prix littéraire: ");
-                            for (int i = 0; i < Roman.tabPrixLitteraire.length; i++) {
-                                System.out.println(i + ": " + Roman.tabPrixLitteraire[i]);
+                            int i=0;
+                            for (PrixLitteraire pLit : PrixLitteraire.values()) {
+                                System.out.println(i + ": " + pLit);
+                                i++;
                             }
                             System.out.print("Choix: ");
-                            int prixLitteraire = saisirChoix();
-                            if (prixLitteraire == 0) { break; }
+                            int pLit = saisirChoix();
+                            if (pLit < 0 || pLit > PrixLitteraire.values().length - 1) {pLit=0;} // aucun prix littéraire si erreur
 
                             // création du document et ajout à la bibliothèque
-                            Roman roman = new Roman(isbn, titre, auteur, nbPages, prixLitteraire);
+                            Roman roman = new Roman(isbn, titre, auteur, nbPages, PrixLitteraire.values()[pLit]);
                             bibliotheque.ajouter(roman);
                             System.out.println("Document ajouté à la bibliothèque avec succès !" + tirets);
                             break;
@@ -208,10 +210,10 @@ public class Menu {
 
     // remplir la bibliothèque avec 8 documents pour la démo
     private void peupleBiblio() {
-        Roman roman1 = new Roman(565454,"Le Diable au corps","Marie Couchetoilas",100,0);
+        Roman roman1 = new Roman(565454,"Le Diable au corps","Marie Couchetoilas",100,PrixLitteraire.Aucun);
         bibliotheque.ajouter(roman1);
 
-        Roman roman2 = new Roman(824686,"La Bible","Lucie Fair",200,1);
+        Roman roman2 = new Roman(824686,"La Bible","Lucie Fair",200,PrixLitteraire.FEMINA);
         bibliotheque.ajouter(roman2);
 
         Manuel manuel1 = new Manuel(625415, "Java pour les nuls", "Xavier Kasavoir",110,1);
