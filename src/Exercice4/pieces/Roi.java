@@ -3,7 +3,7 @@ package Exercice4.pieces;
 import java.util.HashMap;
 
 public class Roi extends Piece {
-    public static final int VALEUR_ROI = 10;
+    //public static final int VALEUR_ROI = 10;
 
     public Roi (boolean pCouleur, Position pPosition) {
         super(TypePiece.Roi, pCouleur, pPosition);
@@ -12,7 +12,6 @@ public class Roi extends Piece {
     @Override
     public HashMap calculCoupsPossibles() {
         HashMap mapCoupsPossibles = new HashMap(); //tableau clé-valeur avec clé=position testée et valeur=points rapportés
-        int dep = pCouleur ? 1 : -1; // ajoute 1 au déplacement vertical si blanc, et -1 si noir
         mapCoupsPossibles.clear();
 
         // case nord-ouest
@@ -53,7 +52,7 @@ public class Roi extends Piece {
         return mapCoupsPossibles;
     }
 
-    private boolean isCoupPermis(Position pTest) {  //todo
+    private boolean isCoupPermis(Position pTest) {
         if (pTest.isSurPlateau() && pTest.isLibre()) {return true;}
         if (pTest.isSurPlateau() && pTest.isCouleurDifferente(pCouleur)) {return true;}
         return false;
