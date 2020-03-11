@@ -5,14 +5,13 @@ import java.util.Scanner;
 public class Menu {
     private Scanner sc = new Scanner(System.in);
     private Bibliotheque bibliotheque = new Bibliotheque(1000);
-    int isbn, nbPages;
-    String titre, auteur;
+    private final String tirets = "\n------------------------------------------------------------";
 
     public void menuGeneral() {
 
         peupleBiblio(); // créer 8 documents pour la démo
-        System.out.println("Bibliothèque créée ! Capacité: " + bibliotheque.getCapacite() + " documents. Nombre de documents actuels: " + bibliotheque.getNbDocuments());
-        System.out.println("------------------------------------------------------------");
+        System.out.println("Bibliothèque créée ! Capacité: " + bibliotheque.getCapacite() +
+                " documents. Nombre de documents actuels: " + bibliotheque.getNbDocuments() + tirets);
 
         do { // boucle du menu général
             System.out.println("1: Modifier capacité bibliothèque");
@@ -26,15 +25,18 @@ public class Menu {
             String choix = "";
             System.out.print("Votre choix: ");
             choix = sc.nextLine();
-            System.out.println("------------------------------------");
+            System.out.println(tirets);
+            int isbn;
             switch (choix) {
 
                 case "1": // Modifier capacité bibliothèque"
                     System.out.print("Entrez la nouvelle capacité de la bibliothèque (mini:" + bibliotheque.getNbDocuments() + "): ");
                     int newCapacite = saisirChoix();
-                    if (newCapacite == 0 || newCapacite < bibliotheque.getNbDocuments()) { break; }
-                    bibliotheque.setCapacite(Integer.parseInt(choix));
-                    System.out.println("Nouvelle capacité de la bibliothèque: " + bibliotheque.getCapacite() + " documents.");
+                    if (newCapacite == 0 || newCapacite < bibliotheque.getNbDocuments()) {
+                        System.out.println("ERREUR: valeur incorrecte !" + tirets);
+                        break; }
+                    bibliotheque.setCapacite(newCapacite);
+                    System.out.println("Nouvelle capacité de la bibliothèque: " + bibliotheque.getCapacite() + " documents." + tirets);
                     break;
 
                 case "2": // Afficher tous les ouvrages
@@ -46,8 +48,7 @@ public class Menu {
                     System.out.print( "Lequel voulez-vous afficher ? ");
                     int posDoc = saisirChoix();
                     if (posDoc <= bibliotheque.getNbDocuments()) { bibliotheque.getDocument(posDoc); }
-                    else { System.out.println("ERREUR : Valeur: " + choix + " incorrecte !"); }
-                    System.out.println("------------------------------------");
+                    else { System.out.println("ERREUR : Valeur: " + choix + " incorrecte !" + tirets); }
                     break;
 
                 case "4": // Ajouter un document
@@ -63,15 +64,15 @@ public class Menu {
 
                             // saisie titre
                             System.out.print("Titre du document: ");
-                            titre = sc.nextLine();
+                            String titre = sc.nextLine();
 
                             //saisie auteur
                             System.out.print("Nom de l'auteur: ");
-                            auteur = sc.nextLine();
+                            String auteur = sc.nextLine();
 
                             //saisie nb pages
                             System.out.print("Nombre de pages: ");
-                            nbPages = saisirChoix();
+                            int nbPages = saisirChoix();
                             if (nbPages == 0) { break; }
 
                             //saisie prix littéraire
@@ -84,10 +85,9 @@ public class Menu {
                             if (prixLitteraire == 0) { break; }
 
                             // création du document et ajout à la bibliothèque
-                            Roman roman = new Roman(isbn, titre,auteur, nbPages, prixLitteraire);
+                            Roman roman = new Roman(isbn, titre, auteur, nbPages, prixLitteraire);
                             bibliotheque.ajouter(roman);
-                            System.out.println("Document ajouté à la bibliothèque avec succès !");
-                            System.out.println("------------------------------------");
+                            System.out.println("Document ajouté à la bibliothèque avec succès !" + tirets);
                             break;
 
                         case "2": //ajout manuel
@@ -117,8 +117,7 @@ public class Menu {
                             // création du document et ajout à la bibliothèque
                             Manuel manuel = new Manuel(isbn, titre, auteur, nbPages, niveauScolaire);
                             bibliotheque.ajouter(manuel);
-                            System.out.println("Document ajouté à la bibliothèque avec succès !");
-                            System.out.println("------------------------------------");
+                            System.out.println("Document ajouté à la bibliothèque avec succès !" + tirets);
                             break;
 
                         case "3": //ajout revue
@@ -144,8 +143,7 @@ public class Menu {
                             // création du document et ajout à la bibliothèque
                             Revue revue = new Revue(isbn, titre, moisParution, anneeParution);
                             bibliotheque.ajouter(revue);
-                            System.out.println("Document ajouté à la bibliothèque avec succès !");
-                            System.out.println("------------------------------------");
+                            System.out.println("Document ajouté à la bibliothèque avec succès !" + tirets);
                             break;
 
                         case "4": //ajout dictionnaire
@@ -167,8 +165,7 @@ public class Menu {
                             // création du document et ajout à la bibliothèque
                             Dictionnaire dico = new Dictionnaire(isbn, titre, langue);
                             bibliotheque.ajouter(dico);
-                            System.out.println("Document ajouté à la bibliothèque avec succès !");
-                            System.out.println("------------------------------------");
+                            System.out.println("Document ajouté à la bibliothèque avec succès !" + tirets);
                             break;
 
                         default:
@@ -180,9 +177,8 @@ public class Menu {
                 case "5": // Supprimer un document
                     System.out.print( "Entrez le numéro ISBN du document à supprimer: ");
                     isbn = saisirChoix();
-                    if (bibliotheque.supprimer(isbn)) { System.out.println("Document supprimé !"); }
-                    else { System.out.println("ERREUR: échec de la suppression, ce numéro ISBN n'exite pas !");}
-                    System.out.println("------------------------------------");
+                    if (bibliotheque.supprimer(isbn)) { System.out.println("Document supprimé de la bibliothèque !" + tirets); }
+                    else { System.out.println("ERREUR: échec de la suppression, ce numéro ISBN n'existe pas !" + tirets);}
                     break;
 
                 case "6": // Afficher les auteurs
@@ -190,6 +186,7 @@ public class Menu {
                     break;
 
                 case "7": // fin programme
+                    System.out.println("Au revoir !");
                     System.exit(0);
                     break;
 
@@ -205,23 +202,22 @@ public class Menu {
         choix = sc.nextLine();
         // vérification par regex que choix est bien un nombre entier positif
         if (choix.matches("\\d+")) { return Integer.parseInt(choix);}
-        System.out.println("ERREUR : Valeur: " + choix +  " non valide !");
-        System.out.println("------------------------------------");
+        System.out.println("ERREUR : Valeur: " + choix +  " non valide !" + tirets);
         return 0;
     }
 
     // remplir la bibliothèque avec 8 documents pour la démo
     private void peupleBiblio() {
-        Roman roman1 = new Roman(565454,"Titre roman 1","Auteur Roman 1",100,0);
+        Roman roman1 = new Roman(565454,"Le Diable au corps","Marie Couchetoilas",100,0);
         bibliotheque.ajouter(roman1);
 
-        Roman roman2 = new Roman(824686,"Titre roman 2","Auteur Roman 2",200,1);
+        Roman roman2 = new Roman(824686,"La Bible","Lucie Fair",200,1);
         bibliotheque.ajouter(roman2);
 
-        Manuel manuel1 = new Manuel(625415, "Manuel 1", "Emmanuel",110,1);
+        Manuel manuel1 = new Manuel(625415, "Java pour les nuls", "Xavier Kasavoir",110,1);
         bibliotheque.ajouter(manuel1);
 
-        Manuel manuel2 = new Manuel(123456, "Manuel 2", "Emmanuelle",210,1);
+        Manuel manuel2 = new Manuel(123456, "Hé ! Manuel", "Emmanuelle",210,1);
         bibliotheque.ajouter(manuel2);
 
         Revue revue1 = new Revue(547554,"Pif gadget",1,1980);

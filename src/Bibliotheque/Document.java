@@ -1,7 +1,7 @@
 package Bibliotheque;
 
 public abstract class Document {
-    protected int isbn;
+    protected int isbn; //ISBN: International Standart Book
     protected String titre;
 
     // contructeur

@@ -3,22 +3,15 @@ package Exercice4.pieces;
 import java.util.HashMap;
 
 public class Cavalier extends Piece {
-    //public static final int VALEUR_CAVALIER = 3;
 
     public Cavalier (boolean pCouleur, Position pPosition) {
         super(TypePiece.Cavalier, pCouleur, pPosition);
     }
 
-//    @Override
-//    public void seDeplace() {
-//
-//    }
     @Override
     public HashMap calculCoupsPossibles() { // 8 cases à tester
         HashMap mapCoupsPossibles = new HashMap(); //tableau clé-valeur avec clé=position testée et valeur=points rapportés
-        //int dep = pCouleur ? 1 : -1; // ajoute 1 au déplacement vertical si blanc, et -1 si noir
         mapCoupsPossibles.clear();
-
 
         //1 case au nord + 2 cases à l'est
         Position testPosition1 = new Position(pPosition.getX() + 2, pPosition.getY() + 1);
@@ -64,12 +57,4 @@ public class Cavalier extends Piece {
         return false;
     }
 
-//    //renvoi la valeur du coup possible (0 si déplacement simple, valeur de la pièce prise si prise)
-//    private int calculValeurCoup (Position pTest) {
-//        // retourne 0 si la position à tester est sur le plateau et que case vide : déplacement simple => valeur = 0
-//        //if (pTest.isLibre() ) { return 0;}
-//        //calcul et retourne la valeur de la position cible
-//        if (pTest.isCouleurDifferente(pCouleur)) { return pTest.valPosition();}
-//        return 0; // case libre
-//    }
 }

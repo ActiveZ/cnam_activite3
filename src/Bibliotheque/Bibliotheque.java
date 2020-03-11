@@ -8,6 +8,7 @@ public class Bibliotheque {
     Scanner sc = new Scanner(System.in);
     private List<Document> bibliotheque = new ArrayList<Document>();
     private int capacite = 1000; //nb max de documents
+    private final String tirets = "------------------------------------------------------------";
 
     ////////////////// contructeur ////////////////////////
 
@@ -31,7 +32,7 @@ public class Bibliotheque {
         for (Document doc : bibliotheque) {
             System.out.println(doc.toString());
         }
-        System.out.println("------------------------------------");
+        System.out.println(tirets);
     }
 
     // renvoi le ième document
@@ -51,14 +52,14 @@ public class Bibliotheque {
                 System.out.println(((Manuel) doc).auteur);
             }
         }
-        System.out.println("------------------------------------");
+        System.out.println(tirets);
     }
 
     // ajouter le document, renvoi true (false si échec)
-    boolean ajouter (Document doc) {return bibliotheque.add(doc);}
+    public boolean ajouter (Document doc) {return bibliotheque.add(doc);}
 
     // supprimer le document par son numéro isbn, renvoi true (false si échec)
-    boolean supprimer (int isbn) {
+    public boolean supprimer (int isbn) {
         for (Document doc : bibliotheque) {
             if (doc.isbn == isbn) { return (bibliotheque.remove(doc)); }
         }
