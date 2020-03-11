@@ -59,7 +59,8 @@ public class Pion extends Piece {
             mapCoupsPossibles.put(testPosition4, testPosition4.valPosition()); //calcul et stockage de la valeur de la position cible
         }
 
-        //prise en passant: pas implémenté
+        // pas implémenté: prise en passant
+        // pas implémenté: récupération pièce si arrivée extrémité plateau
 
         return mapCoupsPossibles;
     }
