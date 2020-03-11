@@ -40,12 +40,14 @@ public class Position {
     }
 
     public int valPosition () { //calcul de la valeur de la pièce à prendre à la position p
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Pion) {return 1;}
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Cavalier) {return 3;}
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Fou) {return 3;}
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Tour) {return 5;}
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Reine) {return 9;}
-        if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Roi) {return 10;}
+        if (Plateau.tabPlaleau[getX()][getY()] != null) {
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Pion) {return 1;}
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Cavalier) {return 3;}
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Fou) {return 3;}
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Tour) {return 5;}
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Reine) {return 9;}
+            if (Plateau.tabPlaleau[getX()][getY()].pNom == TypePiece.Roi) {return 10;}
+        }
         return 0; //case vide
     }
 }

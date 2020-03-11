@@ -36,7 +36,6 @@ public abstract class Piece {
         pPosition.setX(pArrivee.getX());
         pPosition.setY(pArrivee.getY());
         if ((this instanceof Pion) && ((Pion) this).isPremierCoup()) {
-            System.out.println("top");
             ((Pion) this).setPremierCoup(false);
         }
     }

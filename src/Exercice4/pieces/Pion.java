@@ -31,7 +31,7 @@ public class Pion extends Piece {
 
         // test avance 1 case
         Position testPosition1 = new Position(pPosition.getX(), pPosition.getY() + dep);
-        testPosition1.setY(pPosition.getY() + dep); // modifie y de 1 par rapport à la position actuelle
+        //testPosition1.setY(pPosition.getY() + dep); // modifie y de 1 par rapport à la position actuelle
         if (testPosition1.isSurPlateau() && testPosition1.isLibre() ) { // si la position à tester est sur le plateau et que case vide
             mapCoupsPossibles.put(testPosition1, 0); //déplacement simple => valeur = 0
         }
@@ -39,7 +39,7 @@ public class Pion extends Piece {
         // test avance 2 cases si premier coup
         if (isPremierCoup()) {
                 Position testPosition2 = new Position(pPosition.getX(), pPosition.getY() + dep + dep);
-                testPosition2.setY(pPosition.getY() + dep + dep); // modifie y de 2 par rapport à la position actuelle
+                //testPosition2.setY(pPosition.getY() + dep + dep); // modifie y de 2 par rapport à la position actuelle
                 if (testPosition2.isSurPlateau() && testPosition2.isLibre()) { // si la position à tester est sur le plateau et que case vide
                     mapCoupsPossibles.put(testPosition2, 0); //déplacement simple => valeur = 0
                 }
