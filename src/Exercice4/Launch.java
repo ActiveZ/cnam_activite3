@@ -2,12 +2,15 @@ package Exercice4;
 
 public class Launch {
     public static void main(String[] args) {
-        Plateau plateau = new Plateau();
-        plateau.creationPieces();
-        plateau.affichePlateau();
 
         Jeu jeu = new Jeu();
+        Plateau plateau = new Plateau();
+        jeu.selectionJoueurs();
+        plateau.creationPieces();
+        plateau.affichePlateau();
         jeu.jouer();
+
+
 
     }
 }

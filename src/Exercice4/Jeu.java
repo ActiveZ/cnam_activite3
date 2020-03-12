@@ -5,19 +5,34 @@ import Exercice4.pieces.Position;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.SortedMap;
 import java.util.function.BiConsumer;
 
 public class Jeu {
+    Scanner sc = new Scanner(System.in);
+    private boolean typeJoueurBlanc = false, typeJoueurNoir = false; //1=humain, 0=ordinateur
+
+    //définir si humain ou machine pour les 2 couleurs
+    public void selectionJoueurs() {
+        System.out.println("Le joueur blanc est 1: humain ou 2: ordinateur ?");
+        String choix = sc.nextLine();
+        typeJoueurBlanc = choix.equals("1");
+        System.out.println("Le joueur noir est 1: humain ou 2: ordinateur");
+        choix = sc.nextLine();
+        typeJoueurNoir = choix.equals("1");
+        System.out.println("Démarrage partie joueur blanc: " + (typeJoueurBlanc ? "humain" : "ordinateur") +
+                " contre joueur noir: " + (typeJoueurBlanc ? "humain" : "ordinateur"));
+        System.out.println("Pour déplacer une pièce d'une case à une autre, donnez les coordonnées sous la forme: e2e4");
+        System.out.println("Entrez 0 pour quitter");
+        System.out.println("Joueur blanc commence:");
+
+    }
+
     public void jouer() {
         Scanner sc = new Scanner(System.in);
         String str1 = "abcdefgh";
         String str2 = "12345678";
         String choix;
-
-
-        System.out.println("\nVous avez les blancs, l'ordinateur a les noirs.");
-        System.out.println("Pour déplacer une pièce d'une case à une autre, donnez les coordonnées sous la forme: e2e4");
-        System.out.println("Entrez 0 pour quitter");
 
         do {
             System.out.print("jouez: ");
@@ -39,7 +54,7 @@ public class Jeu {
 
                     // jouer le coup s'il est possible et actualiser le plateau
                     if (isCoupPossible(pieceEnJeu,pArrivee)) {
-                        System.out.println(pieceEnJeu.getpNom() + " se déplace");
+                        System.out.println(pieceEnJeu.getpNom() + (pieceEnJeu.getCouleur() ? " blanc":" noir") + " se déplace en " + choix.substring(2).toUpperCase());
                         pieceEnJeu.seDeplace(pArrivee);
                         Plateau.tabPlaleau[pArrivee.getX()][pArrivee.getY()] = pieceEnJeu;
                         Plateau.tabPlaleau[pDepart.getX()][pDepart.getY()] = null;
@@ -52,6 +67,7 @@ public class Jeu {
         } while (true);
     }
 
+    // retourne true si la piece peut se déplacer à la position souhaitée par joueur (humain)
     private boolean isCoupPossible(Piece p, Position arrivee) {
         HashMap<Position,Integer> casesPossibles = p.calculCoupsPossibles();
 
