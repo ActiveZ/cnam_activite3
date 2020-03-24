@@ -1,6 +1,4 @@
-package Exercice4.pieces;
-
-import Exercice4.Plateau;
+package Echecs.pieces;
 
 import java.util.ArrayList;
 import java.util.HashMap;

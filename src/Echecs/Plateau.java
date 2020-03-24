@@ -1,6 +1,6 @@
-package Exercice4;
+package Echecs;
 
-import Exercice4.pieces.*;
+import Echecs.pieces.*;
 
 public class Plateau {
 

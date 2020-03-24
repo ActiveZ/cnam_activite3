@@ -1,4 +1,4 @@
-package Exercice4;
+package Echecs;
 
 public class Launch {
     public static void main(String[] args) {

@@ -1,8 +1,5 @@
-package Exercice4.pieces;
+package Echecs.pieces;
 
-import Exercice4.Plateau;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Pion extends Piece {

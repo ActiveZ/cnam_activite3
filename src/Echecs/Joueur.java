@@ -1,6 +1,6 @@
-package Exercice4;
+package Echecs;
 
-import Exercice4.pieces.Piece;
+import Echecs.pieces.Piece;
 
 import java.util.ArrayList;
 

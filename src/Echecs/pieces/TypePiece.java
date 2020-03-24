@@ -1,7 +1,4 @@
-package Exercice4.pieces;
-
-import java.util.ArrayList;
-import java.util.List;
+package Echecs.pieces;
 
 public enum TypePiece {
     // type de pièce, caractère si pièce blanche, caractère si pièce noire

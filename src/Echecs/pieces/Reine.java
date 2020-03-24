@@ -1,12 +1,12 @@
-package Exercice4.pieces;
+package Echecs.pieces;
 
 import java.util.HashMap;
 
-public class Fou extends Piece {
-    public static final int VALEUR_FOU = 3;
+public class Reine extends Piece {
+    public static final int VALEUR_REINE = 9;
 
-    public Fou (boolean pCouleur, Position pPosition) {
-        super(TypePiece.Fou, pCouleur, pPosition);
+    public Reine (boolean pCouleur, Position pPosition) {
+        super(TypePiece.Reine, pCouleur, pPosition);
     }
 
     @Override
@@ -15,6 +15,56 @@ public class Fou extends Piece {
         mapCoupsPossibles.clear();
         int i = 0;
         boolean ok = false;
+
+        // ligne nord
+        i = 0;
+        do {
+            ok = false;
+            i++;
+            Position testPosition = new Position(pPosition.getX() , pPosition.getY() + i);
+            if (isCoupPermis(testPosition)) {
+                ok = true;
+                mapCoupsPossibles.put(testPosition, testPosition.valPosition());
+            }
+        } while (ok);
+
+        // ligne sud
+        i = 0;
+        do {
+            ok = false;
+            i++;
+            Position testPosition = new Position(pPosition.getX() , pPosition.getY() - i);
+            if (isCoupPermis(testPosition)) {
+                ok = true;
+                mapCoupsPossibles.put(testPosition, testPosition.valPosition());
+            }
+        } while (ok);
+
+        // ligne ouest
+        i = 0;
+        do {
+            ok = false;
+            i++;
+            Position testPosition = new Position(pPosition.getX() - i , pPosition.getY());
+            if (isCoupPermis(testPosition)) {
+                ok = true;
+                mapCoupsPossibles.put(testPosition, testPosition.valPosition());
+            }
+        } while (ok);
+
+        // ligne est
+        i = 0;
+        do {
+            ok = false;
+            i++;
+            Position testPosition = new Position(pPosition.getX() + i, pPosition.getY());
+            if (isCoupPermis(testPosition)) {
+                ok = true;
+                mapCoupsPossibles.put(testPosition, testPosition.valPosition());
+            }
+        } while (ok);
+
+
 
         // diagonale nord-ouest
         i = 0;

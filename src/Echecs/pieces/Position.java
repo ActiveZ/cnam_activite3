@@ -1,6 +1,6 @@
-package Exercice4.pieces;
+package Echecs.pieces;
 
-import Exercice4.Plateau;
+import Echecs.Plateau;
 
 public class Position {
     private int x, y;

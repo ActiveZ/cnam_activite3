@@ -1,4 +1,4 @@
-package Exercice4.pieces;
+package Echecs.pieces;
 
 import java.util.HashMap;
 
